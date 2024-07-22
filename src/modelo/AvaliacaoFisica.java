@@ -5,6 +5,7 @@
 package modelo;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -18,6 +19,7 @@ public class AvaliacaoFisica {
     private double altura;
     private double percGordura;
     private Pessoa aluno;
+    private SimpleDateFormat mascaraData = new SimpleDateFormat("dd/MM/yyyy HH:mm");
     
 
     public double getPeso() {
@@ -64,9 +66,9 @@ public class AvaliacaoFisica {
     public String mostraAvaliacao() {
         DecimalFormat formatoNum = new DecimalFormat("0.0#");
 
-        String txt = "Data Avaliação: " + data;
+        String txt = "Data Avaliação: " + mascaraData.format(data);
         
-        txt += "\n Aluno: "+aluno+": "+aluno.getCPF();
+        txt += "\n Aluno: "+aluno;
         
         txt += "\n Peso: " + ((peso != 0) ? formatoNum.format(peso) : "Sem info");
         txt += "\n Altura: " + ((altura != 0) ? formatoNum.format(altura) : "Sem info");
@@ -82,6 +84,12 @@ public class AvaliacaoFisica {
     public AvaliacaoFisica() {
         data = new Date();
     }
+
+    @Override
+    public String toString() {
+        return mascaraData.format(data) + " -> "+calculaIMC();
+    }
+    
     
     
 

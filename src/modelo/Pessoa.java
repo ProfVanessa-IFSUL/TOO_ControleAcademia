@@ -5,27 +5,26 @@
 package modelo;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author vanessalagomachado
  */
 public class Pessoa {
-    private int matricula;
-    private String nome;
-    private Date dataNascimento;
+    protected String nome;
+    protected Date dataNascimento;
     private String CPF;
 
     
+
     
-    public Pessoa(int mat, String nome){
-        matricula = mat;
-        this.nome = nome;
-    }
     
     public Pessoa(String nome){
         this.nome = nome;
+
     }
     
     public String mostraInfo(){
@@ -33,21 +32,20 @@ public class Pessoa {
                 
                 
         String txt = "Nome: "+nome;
-        txt += "\n Matricula: "+matricula;
         txt += "\n Data Nascimento: "+dataNascimento;
         txt += "\n CPF: "+CPF;
         
-//        if(peso != 0 && altura != 0)
-//            txt += "\n IMC: "+formatoNum.format(calculaIMC());
+
         
         return txt;
     }
     
     
+
+    
+    
+    
     // getter
-    public int getMatricula(){
-        return this.matricula;
-    }
     public String getNome(){
         return nome;
     }
@@ -57,7 +55,8 @@ public class Pessoa {
     public Date getDataNascimento(){
         return dataNascimento;
     }
-
+    
+    
     
     
     // setter
@@ -72,9 +71,9 @@ public class Pessoa {
     }
 
 //    @Override
-//    public String toString() {
-//        return nome;
-//    }
+    public String toString() {
+        return nome+(CPF!=null?": "+getCPF():"");
+    }
 
     
      
