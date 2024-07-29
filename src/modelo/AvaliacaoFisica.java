@@ -18,7 +18,8 @@ public class AvaliacaoFisica {
     private double peso;
     private double altura;
     private double percGordura;
-    private Pessoa aluno;
+    private Aluno aluno;
+    private Professor professor;
     private SimpleDateFormat mascaraData = new SimpleDateFormat("dd/MM/yyyy HH:mm");
     
 
@@ -50,12 +51,7 @@ public class AvaliacaoFisica {
         percGordura = perc;
     }
     
-    public Pessoa getAluno(){
-        return aluno;
-    }
-    public void setAluno(Pessoa a){
-        aluno = a;
-    }
+    
     
 
     public double calculaIMC() {
@@ -87,8 +83,26 @@ public class AvaliacaoFisica {
 
     @Override
     public String toString() {
-        return mascaraData.format(data) + " -> "+calculaIMC();
+        return mascaraData.format(data) + " -> "+calculaIMC() + " - Avaliador: "+professor ;
     }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+     void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+    
+    
     
     
     

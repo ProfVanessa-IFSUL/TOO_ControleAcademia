@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author vanessalagomachado
  */
-public class Pessoa {
+public abstract class Pessoa {
     protected String nome;
     protected Date dataNascimento;
     private String CPF;
@@ -70,11 +70,14 @@ public class Pessoa {
         dataNascimento = dataNasc;
     }
 
-//    @Override
+    @Override
     public String toString() {
         return nome+(CPF!=null?": "+getCPF():"");
     }
-
+    
+    
+// Método abstrado
+    public abstract void viraMes(Object obj);
     
      
 
