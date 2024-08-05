@@ -35,5 +35,8 @@ public class TesteHeranca {
 //        Pessoa p = new Pessoa("Teste");
         
         System.out.println("Avaliação Física\n"+af.mostraAvaliacao());
+        
+        Professor p = new Professor("Paulo", 100);
+        p.gerarProtocoloTreino();
     }
 }
